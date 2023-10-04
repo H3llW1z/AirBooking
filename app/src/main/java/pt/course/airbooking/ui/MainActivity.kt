@@ -1,7 +1,8 @@
-package pt.course.airbooking
+package pt.course.airbooking.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import pt.course.airbooking.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
