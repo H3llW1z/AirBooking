@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -45,21 +46,23 @@ dependencies {
 
     //Room (Local database)
     val roomVersion = "2.5.2"
-
     implementation("androidx.room:room-runtime:$roomVersion")
-    kapt("androidx.room:room-compiler:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion")
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
 
+    //ViewModel, lifecycleScope, viewModelScope, LiveData
     val lifecycleVersion = "2.6.2"
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
 
     //Navigation
-    implementation ("com.github.terrakok:cicerone:7.1")
+    val ciceroneVersion = "7.1"
+    implementation ("com.github.terrakok:cicerone:$ciceroneVersion")
 
     //Dagger
-    implementation("com.google.dagger:dagger:2.44.2")
-    kapt("com.google.dagger:dagger-compiler:2.44.2")
+    val daggerVersion = "2.48.1"
+    implementation("com.google.dagger:dagger:$daggerVersion")
+    kapt("com.google.dagger:dagger-compiler:$daggerVersion")
 }

@@ -4,5 +4,5 @@ sealed class BookingResult {
 
     data class Success(val bookingCode: String): BookingResult()
 
-    object InvalidInput: BookingResult()
+    data object InvalidInput: BookingResult()
 }
