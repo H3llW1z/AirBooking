@@ -8,7 +8,7 @@ import pt.course.airbooking.data.db.AppDatabase
 import pt.course.airbooking.data.db.dao.FlightsDao
 import pt.course.airbooking.data.db.dao.PlaneTypesDao
 import pt.course.airbooking.data.implementation.BookingRepositoryImpl
-import pt.course.airbooking.di.ApplicationScope
+import pt.course.airbooking.di.annotation.ApplicationScope
 import pt.course.airbooking.domain.BookingRepository
 
 @Module

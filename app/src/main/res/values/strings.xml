@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AirBooking</string>
+    <string name="title_initial_screen">Выберите режим работы</string>
+    <string name="title_flights_list_screen">Список рейсов</string>
 </resources>
