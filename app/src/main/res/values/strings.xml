@@ -1,5 +1,49 @@
 <resources>
     <string name="app_name">AirBooking</string>
+
     <string name="title_initial_screen">Выберите режим работы</string>
     <string name="title_flights_list_screen">Список рейсов</string>
+
+    <string name="long_dash">—</string>
+    <string name="departure_location_tools">Departure</string>
+    <string name="destination_location_tools">Destination</string>
+    <string name="time_tools">13:37</string>
+    <string name="airport_code_tools">LED</string>
+    <string name="date_in_frame_tools">ОКТ\n31</string>
+    <string name="date_tools">пн, 20 нояб.</string>
+
+    <string name="surname">Фамилия</string>
+    <string name="name">Имя</string>
+    <string name="patronymic">Отчество</string>
+    <string name="document_title">Данные паспорта РФ</string>
+    <string name="date_of_birth">Дата рождения <i>ДД.ММ.ГГГГ</i></string>
+    <string name="sex_type">Пол</string>
+    <string name="female">Ж</string>
+    <string name="male">М</string>
+    <string name="document_number">Номер Документа</string>
+
+    <string name="save">Сохранить</string>
+
+    <string name="plane_capacity_tools">100 мест</string>
+    <string name="plane_name_tools">Boeing 737</string>
+
+    <string name="flight_information">Данные о рейсе</string>
+    <string name="departure_location">Место отправления</string>
+    <string name="destination_location">Место назначения</string>
+    <string name="departure_airport">Аэропорт вылета</string>
+    <string name="airport_code">Код</string>
+    <string name="destination_airport">Аэропорт назначения</string>
+    <string name="departure">Отправление</string>
+    <string name="destination">Назначение</string>
+    <string name="airport_and_code">Аэропорт, КОД</string>
+    <string name="date_and_time">Дата и время рейса</string>
+    <string name="plane">Самолёт</string>
+    <string name="full_name">ФИО</string>
+    <string name="plane_name">Название самолёта</string>
+    <string name="flight_information_change">Изменение рейса</string>
+    <string name="buy_ticket">Купить билет</string>
+    <string name="change">Изменить</string>
+    <string name="clap">👏</string>
+    <string name="ticket_confirm">Поздравляю!\nВы купили билет.</string>
+    <string name="back_to_menu">Обратно в меню</string>
 </resources>

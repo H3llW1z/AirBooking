@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="16dp"
+    android:paddingTop="24dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="24dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/departure_location_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/departure"
+        android:textAppearance="@style/flight_title"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintBottom_toTopOf="@id/scroll_view"
+        app:layout_constraintEnd_toStartOf="@id/locations_arrow_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        tools:text="Караганда" />
+
+    <View
+        android:id="@+id/locations_arrow_1"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/arrow_forward"
+        android:backgroundTint="?attr/colorOnSurface"
+        app:layout_constraintBottom_toBottomOf="@id/departure_location_title"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/destination_location_title"
+        app:layout_constraintStart_toEndOf="@id/departure_location_title"
+        app:layout_constraintTop_toTopOf="@id/departure_location_title" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/destination_location_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/destination"
+        android:textAppearance="@style/flight_title"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintBottom_toBottomOf="@id/departure_location_title"
+        app:layout_constraintStart_toEndOf="@id/locations_arrow_1"
+        app:layout_constraintTop_toTopOf="@id/departure_location_title"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        tools:text="Санкт-Петербург" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/button_buy"
+        app:layout_constraintTop_toBottomOf="@id/departure_location_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:contentPadding="12dp"
+                app:contentPaddingBottom="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/flight_information_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/flight_information"
+                        android:textAppearance="@style/main_text"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintBottom_toTopOf="@id/departure_location"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/departure_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/departure"
+                        android:textAppearance="@style/secondary_text"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/departure_airport"
+                        app:layout_constraintEnd_toStartOf="@id/locations_arrow_2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/flight_information_title" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/departure_airport"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/airport_and_code"
+                        android:textAppearance="@style/additional_text"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        app:layout_constraintStart_toStartOf="@id/departure_location"
+                        app:layout_constraintTop_toBottomOf="@id/departure_location" />
+
+                    <View
+                        android:id="@+id/locations_arrow_2"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="4dp"
+                        android:background="@drawable/arrow_forward"
+                        android:backgroundTint="?attr/colorOnSurfaceVariant"
+                        app:layout_constraintBottom_toBottomOf="@id/departure_airport"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@id/destination_location"
+                        app:layout_constraintStart_toEndOf="@id/departure_location"
+                        app:layout_constraintTop_toTopOf="@id/departure_location" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/destination_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/destination"
+                        android:textAppearance="@style/secondary_text"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/destination_airport"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/locations_arrow_2"
+                        app:layout_constraintTop_toTopOf="@id/departure_location" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/destination_airport"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/airport_and_code"
+                        android:textAppearance="@style/additional_text"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        app:layout_constraintStart_toStartOf="@id/destination_location"
+                        app:layout_constraintTop_toBottomOf="@id/destination_location" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:contentPadding="12dp"
+                app:contentPaddingBottom="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/date_and_time_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/date_and_time"
+                        android:textAppearance="@style/main_text"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintBottom_toTopOf="@id/departure_date"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/departure_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date_tools"
+                        android:textAppearance="@style/main_text"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintBottom_toTopOf="@id/departure_time"
+                        app:layout_constraintEnd_toStartOf="@id/date_and_time_arrow"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/date_and_time_title" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/departure_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/time_tools"
+                        android:textAppearance="@style/main_text"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="@id/departure_date"
+                        app:layout_constraintStart_toStartOf="@id/departure_date"
+                        app:layout_constraintTop_toBottomOf="@id/departure_date" />
+
+                    <View
+                        android:id="@+id/date_and_time_arrow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/arrow_forward"
+                        android:backgroundTint="?attr/colorOnSurfaceVariant"
+                        app:layout_constraintBottom_toBottomOf="@id/departure_time"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@id/destination_date"
+                        app:layout_constraintStart_toEndOf="@id/departure_date"
+                        app:layout_constraintTop_toTopOf="@id/departure_date" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/destination_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date_tools"
+                        android:textAppearance="@style/main_text"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintBottom_toTopOf="@id/destination_time"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/date_and_time_arrow"
+                        app:layout_constraintTop_toTopOf="@id/departure_date" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/destination_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/time_tools"
+                        android:textAppearance="@style/main_text"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="@id/destination_date"
+                        app:layout_constraintStart_toStartOf="@id/destination_date"
+                        app:layout_constraintTop_toBottomOf="@id/destination_date" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:contentPadding="12dp"
+                app:contentPaddingBottom="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/plane_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/plane"
+                        android:textAppearance="@style/main_text"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintBottom_toTopOf="@id/card_view_plane"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_view_plane"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="4dp"
+                        app:cardBackgroundColor="?attr/colorSurfaceContainerHighest"
+                        app:cardCornerRadius="10dp"
+                        app:contentPadding="16dp"
+                        app:layout_constraintBottom_toTopOf="@id/divider_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/plane_title">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/plane_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plane_name_tools"
+                                android:textAppearance="@style/main_text"
+                                android:textColor="?attr/colorOnSurface"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/plane_capacity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/round_frame"
+                                android:backgroundTint="?attr/colorSecondary"
+                                android:drawableStart="@drawable/plane_seat"
+                                android:drawableTint="?attr/colorOnSecondary"
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:text="@string/plane_capacity_tools"
+                                android:textAppearance="@style/round_frame"
+                                android:textColor="?attr/colorOnSecondary"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:id="@+id/divider_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintBottom_toTopOf=""
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/card_view_plane" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/plane_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text="@string/plane"
+                        android:textAppearance="@style/secondary_text"
+                        android:textColor="?attr/colorOnSurface"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider_2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:padding="20dp"
+        android:text="@string/buy_ticket"
+        android:textAppearance="@style/button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_change"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scroll_view" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorPrimaryContainer"
+        android:padding="20dp"
+        android:text="@string/change"
+        android:textAppearance="@style/button"
+        android:textColor="?attr/colorOnPrimaryContainer"
+        app:layout_constraintBottom_toBottomOf="@id/button_buy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_buy"
+        app:layout_constraintTop_toTopOf="@id/button_buy" />
+</androidx.constraintlayout.widget.ConstraintLayout>

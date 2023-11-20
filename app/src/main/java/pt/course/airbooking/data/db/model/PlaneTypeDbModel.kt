@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 data class PlaneTypeDbModel(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
+    val name: String,
     val description: String,
     val capacity: Int
 )
