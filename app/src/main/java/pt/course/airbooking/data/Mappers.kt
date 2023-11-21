@@ -30,4 +30,4 @@ fun FlightDbModel.toEntity() = Flight(
     planeTypeId
 )
 
-fun PlaneTypeDbModel.toEntity() = PlaneType(id, description, capacity)
+fun PlaneTypeDbModel.toEntity() = PlaneType(id, name, description, capacity)
