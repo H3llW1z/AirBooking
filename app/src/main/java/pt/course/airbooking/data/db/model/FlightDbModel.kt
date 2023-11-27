@@ -22,8 +22,8 @@ data class FlightDbModel(
     val departureAirportCode: String,
     val destinationAirport: String,
     val destinationAirportCode: String,
-    val departureTimestamp: String,
-    val arrivalTimestamp: String,
+    val departureTimestamp: Long,
+    val arrivalTimestamp: Long,
     @ColumnInfo(index = true)
     val planeTypeId: Long
 )

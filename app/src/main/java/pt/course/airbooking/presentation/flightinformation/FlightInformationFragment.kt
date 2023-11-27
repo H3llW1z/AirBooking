@@ -13,6 +13,6 @@ class FlightInformationFragment :
     companion object {
 
         @JvmStatic
-        fun newInstance() = FlightInformationFragment()
+        fun newInstance(id: Long) = FlightInformationFragment()
     }
 }

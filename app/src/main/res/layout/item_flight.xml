@@ -21,9 +21,11 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/departure_location"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-
+            android:marqueeRepeatLimit="marquee_forever"
+            android:ellipsize="marquee"
+            android:maxLines="1"
             android:textAppearance="@style/main_text"
             android:textColor="?attr/colorOnSurface"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -48,6 +50,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:ellipsize="marquee"
+            android:maxLines="1"
             android:textAppearance="@style/main_text"
             android:textColor="?attr/colorOnSurface"
             app:layout_constraintBottom_toBottomOf="parent"

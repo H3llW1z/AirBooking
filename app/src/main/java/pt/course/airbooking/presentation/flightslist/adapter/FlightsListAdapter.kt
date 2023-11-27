@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import pt.course.airbooking.databinding.ItemFlightBinding
 import pt.course.airbooking.domain.entity.Flight
+import java.util.Date
 import java.util.Locale
 
 class FlightsListAdapter : ListAdapter<Flight, FlightItemViewHolder>(FlightItemDiffCallback) {
@@ -29,6 +30,7 @@ class FlightsListAdapter : ListAdapter<Flight, FlightItemViewHolder>(FlightItemD
 
         with(holder.binding) {
             departureLocation.text = item.departureLocation
+            departureLocation.isSelected = true
             destinationLocation.text = item.destinationLocation
             calendarDate.text = dateFormatter.format(item.departureTimestamp)
             departureTime.text = timeFormatter.format(item.departureTimestamp)

@@ -13,7 +13,8 @@ import javax.inject.Inject
 
 class FlightsListViewModel @Inject constructor(
     private val getAllFlightsUseCase: GetAllFlightsUseCase,
-    private val getFlightsByAirportCodeUseCase: GetFlightsByAirportCodeUseCase
+    private val getFlightsByAirportCodeUseCase: GetFlightsByAirportCodeUseCase,
+    private val flightsListScreenRouter: FlightsListScreenRouter
 ) : ViewModel() {
 
     private val _state: MutableLiveData<State<List<Flight>>> = MutableLiveData(State.Initial)
@@ -21,14 +22,20 @@ class FlightsListViewModel @Inject constructor(
         get() = _state
 
     fun getAllFlights() {
-        viewModelScope.launch {
-            val result = getAllFlightsUseCase()
-            _state.value = if (result.isEmpty()) {
-                State.EmptyResult
-            } else {
-                State.Content(result)
-            }
+//        viewModelScope.launch {
+//            val result = getAllFlightsUseCase()
+//            _state.value = if (result.isEmpty()) {
+//                State.EmptyResult
+//            } else {
+//                State.Content(result)
+//            }
+//        }
+        val flights = mutableListOf<Flight>()
+        repeat(5) {
+            val flight = Flight(it.toLong(), "Санкт-Петербург", "Алматы", "DepAP", "LED", "DestAp", "ALA", System.currentTimeMillis(), System.currentTimeMillis(), 1)
+            flights.add(flight)
         }
+        _state.value = State.Content(flights)
     }
 
     fun getFlightsByAirportCode(code: String) {
@@ -44,6 +51,6 @@ class FlightsListViewModel @Inject constructor(
     }
 
     fun openFlightInfoScreen(id: Long) {
-
+        flightsListScreenRouter.openFlightInfoScreen(id)
     }
 }

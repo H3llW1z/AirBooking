@@ -12,8 +12,8 @@ import pt.course.airbooking.presentation.planeslist.PlanesListFragment
 fun getInitialScreen(): FragmentScreen = FragmentScreen { InitialFragment.newInstance() }
 fun getFlightsListScreen(): FragmentScreen = FragmentScreen { FlightsListFragment.newInstance() }
 fun getPlanesListScreen(): FragmentScreen = FragmentScreen { PlanesListFragment.newInstance() }
-fun getFlightInformationScreen(): FragmentScreen =
-    FragmentScreen { FlightInformationFragment.newInstance() }
+fun getFlightInformationScreen(id: Long): FragmentScreen =
+    FragmentScreen { FlightInformationFragment.newInstance(id) }
 
 fun getFlightInformationChangeScreen(): FragmentScreen =
     FragmentScreen { FlightInformationChangeFragment.newInstance() }

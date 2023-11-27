@@ -3,6 +3,7 @@ package pt.course.airbooking.di.module
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import pt.course.airbooking.presentation.MainActivity
+import pt.course.airbooking.presentation.flightinformation.FlightInformationFragment
 import pt.course.airbooking.presentation.flightslist.FlightsListFragment
 import pt.course.airbooking.presentation.initial.InitialFragment
 
@@ -17,5 +18,8 @@ interface ScreensModule {
 
     @ContributesAndroidInjector
     fun contributesFlightsListFragmentInjector(): FlightsListFragment
+
+    @ContributesAndroidInjector
+    fun contributesFlightInformationFragmentInjector(): FlightInformationFragment
 
 }

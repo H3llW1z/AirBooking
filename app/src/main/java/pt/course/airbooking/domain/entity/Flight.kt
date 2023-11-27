@@ -8,7 +8,7 @@ data class Flight(
     val departureAirportCode: String,
     val destinationAirport: String,
     val destinationAirportCode: String,
-    val departureTimestamp: String,
-    val arrivalTimestamp: String,
+    val departureTimestamp: Long,
+    val arrivalTimestamp: Long,
     val planeTypeId: Long
 )
