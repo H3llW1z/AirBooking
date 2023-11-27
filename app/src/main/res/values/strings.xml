@@ -51,4 +51,6 @@
     <string name="ticket_confirm">Поздравляю!\nВы купили билет.</string>
     <string name="back_to_menu">Обратно в меню</string>
     <string name="title_planes_list_screen">Список самолётов</string>
+    <string name="no_flights_data">Нет данных о рейсах</string>
+    <string name="hint_airport_code">Введите код аэропорта</string>
 </resources>
