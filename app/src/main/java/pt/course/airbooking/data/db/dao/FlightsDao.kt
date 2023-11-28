@@ -12,6 +12,9 @@ interface FlightsDao {
     @Query("SELECT * FROM flights")
     suspend fun getAllFlights(): List<FlightDbModel>
 
+    @Query("SELECT * FROM flights WHERE id = :id")
+    suspend fun getFlightById(id: Long): FlightDbModel?
+
     @Query("SELECT * FROM flights WHERE departureAirportCode = :code")
     suspend fun getFlightsByAirportCode(code: String): List<FlightDbModel>
 

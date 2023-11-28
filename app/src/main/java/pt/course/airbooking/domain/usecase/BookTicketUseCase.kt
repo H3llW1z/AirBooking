@@ -6,5 +6,5 @@ import javax.inject.Inject
 
 class BookTicketUseCase @Inject constructor(private val repository: BookingRepository) {
 
-    suspend operator fun invoke(passport: Passport) = repository.bookTicket(passport)
+    suspend operator fun invoke(passport: Passport, flightId: Long) = repository.bookTicket(passport, flightId)
 }

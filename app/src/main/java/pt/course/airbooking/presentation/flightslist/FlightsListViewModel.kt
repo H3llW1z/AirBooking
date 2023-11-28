@@ -53,4 +53,8 @@ class FlightsListViewModel @Inject constructor(
     fun openFlightInfoScreen(id: Long) {
         flightsListScreenRouter.openFlightInfoScreen(id)
     }
+
+    fun openNewFlightScreen() {
+        flightsListScreenRouter.openNewFlightScreen()
+    }
 }

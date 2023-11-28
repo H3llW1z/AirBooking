@@ -45,7 +45,7 @@ class BookingRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun bookTicket(passport: Passport): BookingResult =
+    override suspend fun bookTicket(passport: Passport, flightId: Long): BookingResult =
         withContext(Dispatchers.IO) {
             with(passport) {
                 return@withContext if (lastName.isNotEmpty() && name.isNotEmpty() && dateOfBirth.isNotEmpty()
@@ -60,7 +60,11 @@ class BookingRepositoryImpl @Inject constructor(
 
         }
 
-    override suspend fun getPlaneTypeById(id: Long): PlaneType = withContext(Dispatchers.IO) {
-        planeTypesDao.getPlaneTypeById(id).toEntity()
+    override suspend fun getPlaneTypeById(id: Long): PlaneType? = withContext(Dispatchers.IO) {
+        planeTypesDao.getPlaneTypeById(id)?.toEntity()
+    }
+
+    override suspend fun getFlightById(id: Long): Flight? = withContext(Dispatchers.IO) {
+        flightsDao.getFlightById(id)?.toEntity()
     }
 }

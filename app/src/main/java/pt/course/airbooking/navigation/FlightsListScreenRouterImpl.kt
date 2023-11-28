@@ -11,4 +11,9 @@ class FlightsListScreenRouterImpl @Inject constructor(
         val screen = getFlightInformationScreen(id)
         router.navigateTo(screen)
     }
+
+    override fun openNewFlightScreen() {
+        val screen = getNewFlightScreen()
+        router.navigateTo(screen)
+    }
 }

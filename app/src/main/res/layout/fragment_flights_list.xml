@@ -51,4 +51,15 @@
         style="@style/main_text"
         />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_flight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_margin="12dp"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_view_flights"
+        app:layout_constraintEnd_toEndOf="@+id/recycler_view_flights"
+        android:focusable="true" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

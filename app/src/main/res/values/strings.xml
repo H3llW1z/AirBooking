@@ -53,4 +53,6 @@
     <string name="title_planes_list_screen">Список самолётов</string>
     <string name="no_flights_data">Нет данных о рейсах</string>
     <string name="hint_airport_code">Введите код аэропорта</string>
+    <string name="aeroport_with_code_template">%s, %s</string>
+    <string name="capacity_template">%d мест</string>
 </resources>

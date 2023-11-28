@@ -62,6 +62,9 @@ class FlightsListFragment : BaseFragment<FragmentFlightsListBinding, FlightsList
                 }
                 false
             }
+            fabAddFlight.setOnClickListener {
+                viewModel.openNewFlightScreen()
+            }
         }
     }
 

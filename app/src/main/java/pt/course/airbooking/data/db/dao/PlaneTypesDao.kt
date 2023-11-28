@@ -13,7 +13,7 @@ interface PlaneTypesDao {
     suspend fun getAllPlaneTypes(): List<PlaneTypeDbModel>
 
     @Query("SELECT * FROM plane_types WHERE id = :id")
-    suspend fun getPlaneTypeById(id: Long): PlaneTypeDbModel
+    suspend fun getPlaneTypeById(id: Long): PlaneTypeDbModel?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPlaneTypes(planeTypes: List<PlaneTypeDbModel>)

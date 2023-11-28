@@ -17,7 +17,9 @@ interface BookingRepository {
 
     suspend fun getAllPlaneTypes(): List<PlaneType>
 
-    suspend fun getPlaneTypeById(id: Long): PlaneType
+    suspend fun getPlaneTypeById(id: Long): PlaneType?
 
-    suspend fun bookTicket(passport: Passport): BookingResult
+    suspend fun getFlightById(id: Long): Flight?
+
+    suspend fun bookTicket(passport: Passport, flightId: Long): BookingResult
 }
