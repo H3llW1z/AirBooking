@@ -1,7 +1,7 @@
 package pt.course.airbooking.domain.entity
 
 data class Flight(
-    val id: Long,
+    val id: Long = 0,
     val departureLocation: String,
     val destinationLocation: String,
     val departureAirport: String,

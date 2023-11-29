@@ -58,6 +58,8 @@ class FlightsListFragment : BaseFragment<FragmentFlightsListBinding, FlightsList
                     val airportCode = view.text.toString().trim()
                     if (airportCode.isNotBlank()) {
                         viewModel.getFlightsByAirportCode(airportCode)
+                    } else {
+                       viewModel.getAllFlights()
                     }
                 }
                 false

@@ -14,8 +14,4 @@ class InitialScreenRouterImpl @Inject constructor(
     override fun openPlanesInfoScreen() {
         TODO("Not yet implemented")
     }
-
-    override fun openEditScreen() {
-        TODO("Not yet implemented")
-    }
 }

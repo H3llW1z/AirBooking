@@ -8,7 +8,8 @@ import pt.course.airbooking.domain.entity.Flight
 import pt.course.airbooking.domain.entity.PlaneType
 import pt.course.airbooking.presentation.base.BaseFragment
 import pt.course.airbooking.presentation.base.State
-import java.text.SimpleDateFormat
+import pt.course.airbooking.presentation.formatter.getDateFormatter
+import pt.course.airbooking.presentation.formatter.getTimeFormatter
 import java.util.Locale
 
 class FlightInformationFragment :
@@ -76,8 +77,8 @@ class FlightInformationFragment :
     }
 
     private fun fillAllFields(flight: Flight, planeType: PlaneType) {
-        val dateFormatter = SimpleDateFormat("EE, dd MMM", Locale.getDefault())
-        val timeFormatter = SimpleDateFormat("HH:mm", Locale.getDefault())
+        val dateFormatter = getDateFormatter()
+        val timeFormatter = getTimeFormatter()
 
         with(binding) {
             departureLocationTitle.text = flight.departureLocation

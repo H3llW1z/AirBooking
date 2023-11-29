@@ -19,7 +19,7 @@
     <string name="surname">Фамилия</string>
     <string name="name">Имя</string>
     <string name="patronymic">Отчество</string>
-    <string name="document_title">Данные паспорта РФ</string>
+    <string name="document_title">Бронирование билета</string>
     <string name="date_of_birth">Дата рождения <i>ДД.ММ.ГГГГ</i></string>
     <string name="sex_type">Пол</string>
     <string name="female">Ж</string>
@@ -45,14 +45,24 @@
     <string name="full_name">ФИО</string>
     <string name="plane_name">Название самолёта</string>
     <string name="flight_information_change">Изменение рейса</string>
+    <string name="flight_add_title">Добавление рейса</string>
     <string name="buy_ticket">Купить билет</string>
     <string name="change">Изменить</string>
     <string name="clap">👏</string>
-    <string name="ticket_confirm">Поздравляю!\nВы купили билет.</string>
+    <string name="ticket_confirm">Поздравляем!\nВы купили билет.</string>
     <string name="back_to_menu">Обратно в меню</string>
     <string name="title_planes_list_screen">Список самолётов</string>
     <string name="no_flights_data">Нет данных о рейсах</string>
     <string name="hint_airport_code">Введите код аэропорта</string>
     <string name="aeroport_with_code_template">%s, %s</string>
     <string name="capacity_template">%d мест</string>
+    <string name="required_field">Обязательное поле</string>
+    <string name="fill_plane_info_fields">Выберите самолет</string>
+    <string name="set_departure_arrival_time">Выберите время вылета и прилета</string>
+    <string name="time_not_set">Время не выбрано</string>
+    <string name="date_not_set">Дата не выбрана</string>
+    <string name="time_template">%d:$d</string>
+    <string name="fill_all_document_data">Заполните все данные о документе</string>
+    <string name="booking_code_template">Код бронирования: %s</string>
+    <string name="book">Забронировать</string>
 </resources>

@@ -13,7 +13,8 @@ class FlightInformationScreenRouterImpl @Inject constructor(
     }
 
     override fun openBookingScreen(flightId: Long) {
-        TODO("Not yet implemented")
+        val documentScreen = getPersonalDocumentScreen(flightId)
+        router.navigateTo(documentScreen)
     }
 
     override fun openFlightEditScreen(flightId: Long) {

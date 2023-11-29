@@ -6,6 +6,7 @@ import pt.course.airbooking.domain.entity.Flight
 import pt.course.airbooking.domain.entity.PlaneType
 
 fun Flight.toDbModel() = FlightDbModel(
+    id = id,
     departureAirport = departureAirport,
     departureLocation = departureLocation,
     destinationLocation = destinationLocation,

@@ -12,6 +12,7 @@ import pt.course.airbooking.domain.entity.Flight
 import pt.course.airbooking.domain.entity.Passport
 import pt.course.airbooking.domain.entity.PlaneType
 import javax.inject.Inject
+import kotlin.math.abs
 import kotlin.random.Random
 
 class BookingRepositoryImpl @Inject constructor(
@@ -48,11 +49,10 @@ class BookingRepositoryImpl @Inject constructor(
     override suspend fun bookTicket(passport: Passport, flightId: Long): BookingResult =
         withContext(Dispatchers.IO) {
             with(passport) {
-                return@withContext if (lastName.isNotEmpty() && name.isNotEmpty() && dateOfBirth.isNotEmpty()
-                    && citizenship.isNotEmpty() && number.isNotEmpty() && countryOfIssue.isNotEmpty()
-                    && validityPeriod.isNotEmpty()
+                return@withContext if (lastName.isNotEmpty() && name.isNotEmpty() && dateOfBirth.isNotEmpty() && number.isNotEmpty()
                 ) {
-                    BookingResult.Success(Random.nextLong().toString())
+                    val code = abs(Random.nextLong()).toString().take(7)
+                    BookingResult.Success(code)
                 } else {
                     BookingResult.InvalidInput
                 }

@@ -1,18 +1,17 @@
 package pt.course.airbooking.presentation.flightslist.adapter
 
-import android.icu.text.SimpleDateFormat
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import pt.course.airbooking.databinding.ItemFlightBinding
 import pt.course.airbooking.domain.entity.Flight
-import java.util.Date
-import java.util.Locale
+import pt.course.airbooking.presentation.formatter.getDateFormatter
+import pt.course.airbooking.presentation.formatter.getTimeFormatter
 
 class FlightsListAdapter : ListAdapter<Flight, FlightItemViewHolder>(FlightItemDiffCallback) {
 
-    private val dateFormatter = SimpleDateFormat("MMM\ndd", Locale.getDefault())
-    private val timeFormatter = SimpleDateFormat("HH:mm", Locale.getDefault())
+    private val dateFormatter = getDateFormatter()
+    private val timeFormatter = getTimeFormatter()
 
     var onItemClick: ((Long) -> Unit)? = null
 

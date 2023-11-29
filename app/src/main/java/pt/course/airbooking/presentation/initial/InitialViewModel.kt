@@ -14,8 +14,4 @@ class InitialViewModel @Inject constructor(
     fun openPlanesInfoScreen() {
         router.openPlanesInfoScreen()
     }
-
-    fun openEditScreen() {
-        router.openEditScreen()
-    }
 }

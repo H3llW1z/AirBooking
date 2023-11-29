@@ -5,6 +5,4 @@ interface InitialScreenRouter {
     fun openFlightsListScreen()
 
     fun openPlanesInfoScreen()
-
-    fun openEditScreen()
 }

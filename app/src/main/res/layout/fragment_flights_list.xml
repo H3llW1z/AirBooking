@@ -58,8 +58,8 @@
         android:clickable="true"
         android:layout_margin="12dp"
         android:src="@android:drawable/ic_input_add"
-        app:layout_constraintBottom_toBottomOf="@+id/recycler_view_flights"
-        app:layout_constraintEnd_toEndOf="@+id/recycler_view_flights"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,8 +21,8 @@ fun getFlightInformationChangeScreen(id: Long): FragmentScreen =
 fun getNewFlightScreen(): FragmentScreen =
     FragmentScreen { FlightInformationChangeFragment.newInstance() }
 
-fun getPersonalDocumentScreen(): FragmentScreen =
-    FragmentScreen { PersonalDocumentFragment.newInstance() }
+fun getPersonalDocumentScreen(flightId: Long): FragmentScreen =
+    FragmentScreen { PersonalDocumentFragment.newInstance(flightId) }
 
-fun getCongratulationsScreen(): FragmentScreen =
-    FragmentScreen { CongratulationsFragment.newInstance() }
+fun getCongratulationsScreen(bookingCode: String): FragmentScreen =
+    FragmentScreen { CongratulationsFragment.newInstance(bookingCode) }

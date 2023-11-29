@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import pt.course.airbooking.R
 import pt.course.airbooking.databinding.FragmentInitialBinding
-import pt.course.airbooking.presentation.initial.InitialViewModel
 import pt.course.airbooking.presentation.base.BaseFragment
 
 class InitialFragment : BaseFragment<FragmentInitialBinding, InitialViewModel>(
@@ -28,9 +27,6 @@ class InitialFragment : BaseFragment<FragmentInitialBinding, InitialViewModel>(
             }
             btnPlanesInfo.setOnClickListener {
                 viewModel.openPlanesInfoScreen()
-            }
-            btnEdit.setOnClickListener {
-                viewModel.openEditScreen()
             }
         }
     }

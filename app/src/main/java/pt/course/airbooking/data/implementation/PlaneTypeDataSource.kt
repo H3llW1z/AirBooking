@@ -8,7 +8,14 @@ object PlaneTypeDataSource {
         val result = mutableListOf<PlaneTypeDbModel>()
 
         repeat(5) {
-            result.add(PlaneTypeDbModel(it.toLong(), "Plane $it", "Description $it", it * 100))
+            result.add(
+                PlaneTypeDbModel(
+                    it.toLong(),
+                    "Plane ${it + 1}",
+                    "Description ${it + 1}",
+                    it + 1 * 100
+                )
+            )
         }
         return result
     }
