@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.text.InputFilter
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import pt.course.airbooking.R
 import pt.course.airbooking.databinding.FragmentFlightsListBinding
 import pt.course.airbooking.presentation.base.BaseFragment
@@ -40,6 +42,26 @@ class FlightsListFragment : BaseFragment<FragmentFlightsListBinding, FlightsList
 
             recyclerViewFlights.adapter = listAdapter
 
+            val swipeCallback = object :
+                ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+                override fun onMove(
+                    recyclerView: RecyclerView,
+                    viewHolder: RecyclerView.ViewHolder,
+                    target: RecyclerView.ViewHolder
+                ): Boolean {
+                    return false
+                }
+
+                override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                    val position = viewHolder.adapterPosition
+                    val flight = listAdapter.currentList[position]
+                    viewModel.removeFlightById(flight.id)
+                }
+            }
+
+            val itemTouchHelper = ItemTouchHelper(swipeCallback)
+            itemTouchHelper.attachToRecyclerView(recyclerViewFlights)
+
             val lengthFilter = InputFilter.LengthFilter(3)
 
             val charactersFilter = InputFilter { source, start, end, _, _, _ ->
@@ -59,7 +81,7 @@ class FlightsListFragment : BaseFragment<FragmentFlightsListBinding, FlightsList
                     if (airportCode.isNotBlank()) {
                         viewModel.getFlightsByAirportCode(airportCode)
                     } else {
-                       viewModel.getAllFlights()
+                        viewModel.getAllFlights()
                     }
                 }
                 false

@@ -9,6 +9,7 @@ import pt.course.airbooking.presentation.flightinformationchange.FlightInformati
 import pt.course.airbooking.presentation.flightslist.FlightsListFragment
 import pt.course.airbooking.presentation.initial.InitialFragment
 import pt.course.airbooking.presentation.personaldocument.PersonalDocumentFragment
+import pt.course.airbooking.presentation.planeslist.PlanesListFragment
 
 @Module
 interface ScreensModule {
@@ -33,5 +34,8 @@ interface ScreensModule {
 
     @ContributesAndroidInjector
     fun contributesPersonalDocumentFragmentInjector(): PersonalDocumentFragment
+
+    @ContributesAndroidInjector
+    fun contributesPlanesListFragmentInjector(): PlanesListFragment
 
 }

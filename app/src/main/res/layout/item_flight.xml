@@ -63,7 +63,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/calendar_date"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
             android:background="@drawable/round_frame"

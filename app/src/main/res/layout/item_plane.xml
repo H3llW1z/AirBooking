@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="64dp"
+    android:layout_height="wrap_content"
     android:layout_marginStart="12dp"
     android:layout_marginTop="6dp"
     android:layout_marginEnd="12dp"
@@ -20,11 +20,12 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:textAppearance="@style/main_text"
             android:textColor="?attr/colorOnSurface"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/capacity"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/capacity"
             tools:text="@string/plane_name_tools" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -39,10 +40,20 @@
             android:padding="4dp"
             android:textAppearance="@style/round_frame"
             android:textColor="?attr/colorOnSecondary"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/plane_capacity_tools" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_view_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            style="@style/main_text"
+            tools:text="Очень длинное описание"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/capacity" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

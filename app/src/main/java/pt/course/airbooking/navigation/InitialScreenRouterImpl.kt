@@ -12,6 +12,6 @@ class InitialScreenRouterImpl @Inject constructor(
     }
 
     override fun openPlanesInfoScreen() {
-        TODO("Not yet implemented")
+        router.navigateTo(getPlanesListScreen())
     }
 }

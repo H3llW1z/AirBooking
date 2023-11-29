@@ -5,12 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import pt.course.airbooking.databinding.ItemFlightBinding
 import pt.course.airbooking.domain.entity.Flight
-import pt.course.airbooking.presentation.formatter.getDateFormatter
 import pt.course.airbooking.presentation.formatter.getTimeFormatter
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class FlightsListAdapter : ListAdapter<Flight, FlightItemViewHolder>(FlightItemDiffCallback) {
 
-    private val dateFormatter = getDateFormatter()
+    private val dateFormatter = SimpleDateFormat("MMM\ndd", Locale.getDefault())
     private val timeFormatter = getTimeFormatter()
 
     var onItemClick: ((Long) -> Unit)? = null

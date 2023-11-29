@@ -1,12 +1,11 @@
 package pt.course.airbooking.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
 import com.github.terrakok.cicerone.androidx.AppNavigator
 import dagger.android.AndroidInjection
-import dagger.android.support.AndroidSupportInjection
 import pt.course.airbooking.R
 import pt.course.airbooking.navigation.getInitialScreen
 import javax.inject.Inject
@@ -25,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        router.navigateTo(getInitialScreen())
+        router.newRootScreen(getInitialScreen())
     }
 
     override fun onResume() {
